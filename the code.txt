@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function prototypes
+double amountTransaction(double amount);
+void displayTransactionProof();
+
+int main() {
+    int bank_account; // Changed to int
+    double transfer_amount;
+
+    cout << "Select Account to Transaction" << endl;
+    cout << endl;
+    cout << "Savings Bank Account (1)" << endl;
+    cout << "Current Bank Account (2)" << endl;
+    cout << "Enter the number of your Bank Account: ";
+    cin >> bank_account;
+
+    if (bank_account == 1) {
+        cout << "Savings Bank Account selected." << endl;
+    }
+    else if (bank_account == 2) {
+        cout << "Current Bank Account selected." << endl;
+    }
+    else {
+        cout << "Invalid choice of bank account. Please re-enter." << endl;
+        return 1; // Exit the program for invalid input
+    }
+
+    cout << "Please insert the amount of money that you want to transfer (limit not over RM 5000): ";
+    cin >> transfer_amount;
+
+    // Call the transaction function
+    transfer_amount = amountTransaction(transfer_amount);
+
+    return 0;
+}
+
+double amountTransaction(double amount) {
+    string name;
+
+    cout << "Please enter your full name: ";
+    getline(cin, name);
+
+    if (amount <= 5000) {
+        cout << "Dear " << name << "," << endl;
+        cout << "Your transaction has been made. Please wait for a moment for us to print your transaction proof." << endl;
+    }
+    else {
+        cout << "Dear " << name << "," << endl;
+        cout << "Your amount exceeds our transaction limit. Please enter an amount below or equal to RM 5000." << endl;
+    }
+    return amount;
+}
+void displayTransactionProof() {
+
+    cout << "/tTransaction Recipt/t" << endl;
+    cout << "/t-----------------------/t" << endl;
+    cout << "Full Name/t:" << name << endl;
+    cout<<
+}
+
+
+
+
